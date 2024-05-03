@@ -20,9 +20,9 @@ app.post("/api/v1/details", (req, res) =>{
   const newUserId = lastUserId + 1;
   const newUser = {
     id: newUserId,
-    name: name,
-    mail: mail,
-    number: number
+    name, 
+    mail,
+    number
   }
   userDetails.push(newUser);
   fs.writeFileSync(`${__dirname}/data/userDetails.json`),json.stringify(userDetails,null,2);
