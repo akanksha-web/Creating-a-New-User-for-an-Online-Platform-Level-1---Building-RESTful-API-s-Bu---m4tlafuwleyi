@@ -13,7 +13,7 @@ app.use(express.json());
 // Write POST endpoint for registering new user
 app.post("/api/v1/details", (req, res) =>{
   const {name, mail, number} = req.body;
-  if(!name || !mail || !number || typeof name !== 'string' || typeof mail !== 'string' || typeof number !== 'string'){
+  if(!name || !mail || !number || typeof name !== 'string' || typeof mail !== 'string' || typeof number !== 'number'){
     return res.status(400).json({ status: Error, message : "Invalid input"})
 }
   const lastUserId = userDetails[userDetails.length - 1] ?.id || 0;
@@ -30,7 +30,7 @@ app.post("/api/v1/details", (req, res) =>{
     status: "Success",
     message: "User registered successfully",
     data: {
-      newUser
+     newProduct:{ newUser }
     }
   });
 })
@@ -42,6 +42,7 @@ app.get("/api/v1/details", (req, res) => {
     status: "Success",
     message: "Detail of users fetched successfully",
     data: {
+      
       userDetails,
     },
   });
