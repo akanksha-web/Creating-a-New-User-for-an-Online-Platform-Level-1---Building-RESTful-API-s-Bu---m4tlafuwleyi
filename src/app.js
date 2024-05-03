@@ -32,8 +32,8 @@ app.post("/api/v1/details", (req, res) =>{
     data: {
       newUser
     })
-}
-  
+};
+         })
          
 
 // GET endpoint for sending the details of users
